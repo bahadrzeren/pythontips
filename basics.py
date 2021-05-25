@@ -162,3 +162,37 @@ print (person2.age)
 
 # print the result
 print (Person.isAdult(22))
+
+
+
+#TEXT FILE READ/WRITE
+
+# read line by line
+f = open("/tmp/foo.txt","r")
+for line in f:
+    print(line)
+f.close()
+
+# read the entire file in memory
+f = open("/tmp/foo.txt","r")
+contents = f.read()
+print(contents)
+f.close()
+
+# write to a file
+f = open("/tmp/bar.txt","r+") # open for both read and write
+f.write("This is a test")
+contents = f.read()
+print(contents) # will print "This is a test"
+
+
+
+#HTTP
+
+import requests
+r = requests.get("https://lobster1234.github.io")
+print(r.headers) # headers as a dict
+print(r.status_code) # 200
+print(r.content) # body
+r.close()
+
